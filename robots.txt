@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Qidiruv tizimlari uchun sayt xaritasi manzili
+Sitemap: https://bratande423-lab.github.io/portfolio/sitemap.xml
