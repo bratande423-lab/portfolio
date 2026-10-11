@@ -1,0 +1,11 @@
+# Tizim va muhit fayllari
+.DS_Store
+Thumbs.db
+
+# Tahrirlovchi sozlamalari
+.vscode/
+.idea/
+
+# Vaqtinchalik fayllar
+*.tmp
+*.log
