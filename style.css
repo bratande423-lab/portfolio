@@ -1,35 +1,45 @@
 /* ==========================================================================
-   Farrux Aliyev Portfolio - Maxsus Animatsiyalar va Qo'shimcha Dizayn Stillari
+   Elyor Egamberdiyev Portfolio & Bilimdonbek.uz
+   Maxsus Responsive (Telefon va Kompyuterga 100% Moslashuvchanlik) Stillari
    ========================================================================== */
 
 /* Shriftlar va silliq siljish */
 html {
   scroll-behavior: smooth;
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-text-size-adjust: 100%;
 }
 
-/* Moslashtirilgan Scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
+body {
+  overflow-x: hidden;
+  width: 100%;
+  min-height: 100vh;
 }
 
-::-webkit-scrollbar-track {
-  background: #020617;
-}
+/* Moslashtirilgan Scrollbar (Faqat kompyuterlar uchun) */
+@media (min-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
 
-::-webkit-scrollbar-thumb {
-  background: #1e293b;
-  border-radius: 5px;
-  border: 2px solid #020617;
-}
+  ::-webkit-scrollbar-track {
+    background: #020617;
+  }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #4f46e5;
+  ::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 5px;
+    border: 2px solid #020617;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4f46e5;
+  }
 }
 
 /* Navbarni pastga tushganda vizual kuchaytirish */
 .navbar-scrolled {
-  background-color: rgba(2, 6, 23, 0.92) !important;
+  background-color: rgba(2, 6, 23, 0.95) !important;
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
   border-bottom: 1px solid rgba(51, 65, 85, 0.5);
 }
@@ -37,6 +47,7 @@ html {
 /* Form elementlari focus animatsiyasi */
 input, textarea {
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 16px !important; /* iOS Safari avtomatik zoom bo'lib ketishini oldini oladi */
 }
 
 /* Kartochkalar uchun nozik hover effektlari */
@@ -44,7 +55,29 @@ input, textarea {
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.hover-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.1), 0 8px 10px -6px rgba(99, 102, 241, 0.1);
+@media (min-width: 768px) {
+  .hover-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.1), 0 8px 10px -6px rgba(99, 102, 241, 0.1);
+  }
+}
+
+/* Mobil qurilmalar (Smartfonlar) uchun maxsus optimizatsiyalar */
+@media (max-width: 640px) {
+  /* Ortiqcha eni chiqib ketishi (gorizontal skroll)ni oldini olish */
+  .max-w-7xl {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Kichik ekranlarda teginish (touch target) o'lchamlarini kattalashtirish */
+  a, button {
+    touch-action: manipulation;
+  }
+
+  /* Mobil menyu elementlari orasidagi masofani qulaylashtirish */
+  .mobile-nav-link {
+    padding: 0.875rem 1rem !important;
+    font-size: 1rem !important;
+  }
 }
